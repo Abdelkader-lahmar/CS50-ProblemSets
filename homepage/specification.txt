@@ -1,0 +1,21 @@
+HTML tags:
+1. <meta>
+2. <a>
+3. <nav>
+4. <button>
+5. <div>
+6. <h1>
+7. <h3>
+8. <p>
+9. <img>
+10. <script>
+
+CSS properties:
+1. body
+2. header
+3. div.contact
+4. .btn.btn-primary
+5. #mobile-novbar
+
+Javascript: i used javascript to add event listeners for animations and interactive buttons
+Bootstrap: i used bootsrap for buttons(<a>) template and to get icons for contact and mobile navbar

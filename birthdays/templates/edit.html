@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>Birthdays</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Birthdays</h1>
+        </div>
+        <div class="container">
+            <h2>Edit a Birthday</h2>
+            <form action='/' method='post'>
+                <input type='text' placeholder='Name' name='name' required autocomplete='off' value='{{birthday.name}}'>
+                <input type='number' min='1' max='12' name='month' placeholder='Month' required autocomplete='off' value='{{birthday.month}}'>
+                <input type='number' min='1' max='31' name='day' placeholder='Day' required autocomplete='off' value='{{birthday.day}}'>
+                <button name='edit' value='{{birthday.id}}'>Edit Birthday</button>
+            </form>
+        </div>
+    </body>
+</html>

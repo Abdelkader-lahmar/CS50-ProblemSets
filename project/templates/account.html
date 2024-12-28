@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<main class="main account" style="margin-bottom: 7rem;">
+    <div class="container">
+        <form action="/account" method="post">
+            <button type="submit">Log out</button>
+        </form>
+        <form action="/changeinfo" method="post" class="account">
+            <p>user name</p>
+            <input value="{{user.user_name}}" type="text" name="name" placeholder="name" autocomplete="off" required>
+            <p>user email</p>
+            <input value="{{user.user_email}}" type="email" name="email" placeholder="email@email.com" autocomplete="off" required>
+            <button type="submit">change</button>
+        </form>
+        <form action="/changepass" method="post" class="account">
+            <p>Old password</p>
+            <input type="password" name="old_password" placeholder="Old password" autocomplete="off" required>
+            <p>New password</p>
+            <input type="password" name="password" pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[?!@#$%^&*]).{8,}" placeholder="New password" autocomplete="off" required>
+            <p>Password should be at leas 8 characters, one upercase, one lowercase and one speacila character</p>
+            <p>confirm password</p>
+            <input type="password" name="confirm" pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[?!@#$%^&*]).{8,}" placeholder="Confirm password" autocomplete="off" required>
+            <button type="submit">change</button>
+        </form>
+    </div>
+</main>
+{% endblock %}

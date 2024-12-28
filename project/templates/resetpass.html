@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<main class="main login">
+    <div class="container">
+        <form action="/reset-pass/{{token}}" method="post" class="login">
+            <p>Password</p>
+            <input type="password" name="password" pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[?!@#$%^&*]).{8,}" placeholder="Password" autocomplete="off" required>
+            <p>Password should be at least 8 characters, one uppercase, one lowercase, and one special character</p>
+            <p>Confirm password</p>
+            <input type="password" name="confirm" pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[?!@#$%^&*]).{8,}" placeholder="Password" autocomplete="off" required>
+            <p>Attention: if you reset your password you will lose all your data</p>
+            <button type="submit">Reset password</button>
+        </form>
+    </div>
+</main>
+{% endblock %}

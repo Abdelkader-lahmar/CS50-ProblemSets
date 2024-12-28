@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <main class="main login">
+        <div class="container top">
+            <h1>Login</h1>
+            <p>Access your password securly</p>
+        </div>
+        <div class="container">
+            <form action="/login" method="post" class="login">
+                <p>Email</p>
+                <input type="email" name="email" placeholder="email@email.com" autocomplete="off" required>
+                <p>Password</p>
+                <input type="password" name="password" pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[?!@#$%^&*]).{8,}" placeholder="Password" autocomplete="off" required>
+                <a href="/reset-pass">Forgot password?</a>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+        <div class="container register">
+            <p>Don't have an account?</p>
+            <a href="/register">Register</a>
+        </div>
+    </main>
+{% endblock %}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            var answers = ['Assembly', 'Hyper Text Markup Language', '--', 'Stack', 'Recursion'];
+
+            function check_answer(answer) {
+                if (answers.includes(answer.innerHTML)) {
+                    text = document.getElementById(answer.className);
+                    text.innerHTML = 'Correct';
+                    text.style.color = 'green';
+                } else {
+                    answer.style.backgroundColor = '#fa7575';
+                    text = document.getElementById(answer.className);
+                    text.innerHTML = 'Incorrect';
+                    text.style.color = 'red';
+                }
+                var buttons = document.getElementsByClassName(answer.className);
+                for (var button of buttons) {
+                    button.disabled = true;
+                    if (answers.includes(button.innerHTML)) {
+                        button.style.backgroundColor = '#74fc8f';
+                    }
+                }
+            }
+
+            function answer_check(id) {
+                var input = document.getElementById(id);
+
+                switch (id) {
+                    case '6':
+                        var answer = (input.value == '1962') ? true : false;
+                        break;
+                    case '7':
+                        var answer = (input.value.toLowerCase() == 'first in first out') ? true : false;
+                        break;
+                    case '8':
+                        var answer = (input.value == 'x = x + 1') ? true : false;
+                        break;
+                }
+                document.querySelector('button.q' + id).disabled = true;
+                input.disabled = true;
+                if (answer) {
+                    text = document.querySelector('h3.q' + id);
+                    text.innerHTML = 'Correct';
+                    text.style.color = 'green';
+                    input.style.backgroundColor = '#74fc8f';
+                } else {
+                    text = document.querySelector('h3.q' + id);
+                    text.innerHTML = 'Incorrect';
+                    text.style.color = 'red';
+                    input.style.backgroundColor = '#fa7575';
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>1. Which one of these languages is a low level language?</h3>
+                <h3 id='1'></h3>
+                <button class='1' onclick='check_answer(this)'>Python</button>
+                <button class='1' onclick='check_answer(this)'>JavaScript</button>
+                <button class='1' onclick='check_answer(this)'>C/C++</button>
+                <button class='1' onclick='check_answer(this)'>Assembly</button>
+                <!-- second-->
+                <h3>2. What does HTML stand for?</h3>
+                <h3 id='2'></h3>
+                <button class='2' onclick='check_answer(this)'>Hyper Trainer Marking Language</button>
+                <button class='2' onclick='check_answer(this)'>Hyper Text Marketing Language</button>
+                <button class='2' onclick='check_answer(this)'>Hyper Text Markup Language</button>
+                <button class='2' onclick='check_answer(this)'>Hyper Text Markup Leveler</button>
+                <!--third-->
+                <h3>3. The symbol that represents comments in Sql?</h3>
+                <h3 id='3'></h3>
+                <button class='3' onclick='check_answer(this)'>--</button>
+                <button class='3' onclick='check_answer(this)'>#</button>
+                <button class='3' onclick='check_answer(this)'>/*</button>
+                <!--forth-->
+                <h3>4. Which data structure uses LIFO?</h3>
+                <h3 id='4'></h3>
+                <button class='4' onclick='check_answer(this)'>Array</button>
+                <button class='4' onclick='check_answer(this)'>Stack</button>
+                <button class='4' onclick='check_answer(this)'>Tree</button>
+                <button class='4' onclick='check_answer(this)'>Queue</button>
+                <!--fiveth-->
+                <h3>5. A function that calls it self</h3>
+                <h3 id='5'></h3>
+                <button class='5' onclick='check_answer(this)'>Recursion</button>
+                <button class='5' onclick='check_answer(this)'>Do-while</button>
+                <button class='5' onclick='check_answer(this)'>Print</button>
+                <button class='5' onclick='check_answer(this)'>Map</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>6. In what year was Algeria's independence declared?</h3>
+                <h3 class='q6'></h3>
+                <input type='text' id='6'>
+                <button class='q6' onclick='answer_check("6")'>Check answer</button>
+                <!--second-->
+                <h3>7. What FIFO stand for?</h3>
+                <h3 class='q7'></h3>
+                <input type='text' id='7'>
+                <button class='q7' onclick='answer_check("7")'>Check answer</button>
+                <!--thirst-->
+                <h3>8. What ++ stand for in C? (use x)</h3>
+                <h3 class='q8'></h3>
+                <input type='text' id='8'>
+                <button class='q8' onclick='answer_check("8")'>Check answer</button>
+            </div>
+        </div>
+    </body>
+
+</html>

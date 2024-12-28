@@ -1,0 +1,19 @@
+<!--This page is the main page(vault page)-->
+{% extends "layout.html" %}
+
+<!--This will be our content which will be placed in layout main-->
+{% block main %}
+<main class="main" style="margin-bottom: 4.5rem;">
+    <div class="layout">
+        {% for pass in passwords %}
+        <div class="pass">
+            <img src="https://img.logo.dev/{{pass.domain}}?token=pk_DpP1sMG2TbK6CX5nfVcVMw" height="128" width="128"/>
+            <p>{{pass.domain | fixdomain |title}}</p>
+            <a href="/card?type=edit&id={{pass.id}}">
+                <svg viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#95D2FF" stroke-width="1.8719999999999999" transform="matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 8V5C6 4.44772 6.44772 4 7 4H17C17.5523 4 18 4.44772 18 5V19C18 19.5523 17.5523 20 17 20H7C6.44772 20 6 19.5523 6 19V16M6 12H13M13 12L10.5 9.77778M13 12L10.5 14.2222" stroke="#95D2FF" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

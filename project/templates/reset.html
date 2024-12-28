@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block main %}
+<main class="main login">
+    <div class="container">
+        <form action="/reset-pass" method="post" class="login">
+            <p>Email</p>
+            <input type="email" name="email" placeholder="email@email.com" autocomplete="off" required>
+            <button type="submit">Send-mail</button>
+        </form>
+    </div>
+</main>
+{% endblock %}

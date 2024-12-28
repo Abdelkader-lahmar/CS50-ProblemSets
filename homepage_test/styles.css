@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #11212d;
+    color: #ccd0cf;
+    overflow-y: scroll;
+}
+
+header {
+    position: fixed;
+    background-color: #06141b;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    color: rgba(204, 202, 207, 0.3);
+    backdrop-filter: blur(10px);
+    text-decoration: bold;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+
+.content {
+    max-width: 500px;
+}
+
+.content h1 {
+    font-size: 56px;
+    font-weight: 700;
+}
+
+.content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #5b88ab;
+}
+
+.content p {
+    margin: 8px 0 20px;
+}
+
+.btn.btn-primary {
+    background-color: #5b88ab;
+    width: 120px;
+    height: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #11212d;
+    border-color: #5b88ab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn.btn-primary:hover {
+    color: #5b88ab;
+}
+
+.btn.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #11212d;
+    z-index: -1;
+    transition: .5s;
+}
+
+.btn.btn-primary:hover::before {
+    width: 100%;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #ccd0cf;
+}
+
+.logo:hover {
+    color: #5b88ab;
+    transform: scale(1.1);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #ccd0cf;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 35px;
+}
+
+nav a:hover,
+a.active {
+    color: #5b88ab;
+    transform: scale(1.1);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}

@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <main class="main error">
+        <div class="container">
+            <img alt="{{ top }}" width="500" height="500" class="border img-fluid" src="https://api.memegen.link/images/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?background=https://i.imgur.com/G8E5dXQ.jpeg" title="{{ top }}">
+        </div>
+    </main>
+{% endblock %}

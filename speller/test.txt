@@ -1,0 +1,26 @@
+WORDS MISSPELLED:     955
+WORDS IN DICTIONARY:  143091
+WORDS IN TEXT:        17756
+TIME IN load:         0.02
+TIME IN check:        0.02
+TIME IN size:         0.00
+TIME IN unload:       0.01
+TIME IN TOTAL:        0.06
+
+WORDS MISSPELLED:     955
+WORDS IN DICTIONARY:  143039
+WORDS IN TEXT:        17756
+TIME IN load:         0.03
+TIME IN check:        0.50
+TIME IN size:         0.00
+TIME IN unload:       0.00
+TIME IN TOTAL:        0.54
+
+WORDS MISSPELLED:     1625
+WORDS IN DICTIONARY:  143039
+WORDS IN TEXT:        17756
+TIME IN load:         0.03
+TIME IN check:        0.48
+TIME IN size:         0.00
+TIME IN unload:       0.00
+TIME IN TOTAL:        0.52

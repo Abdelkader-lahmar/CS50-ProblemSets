@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block main %}
+{% if type == "add" %}
+    <main class="main">
+        <div class="container">
+            <form action="/addcard" method="post" class="add">
+                <p>domain</p>
+                <input type="text" name="domain" placeholder="domain" autocomplete="off"required>
+                <p>Email</p>
+                <input type="email" name="email" placeholder="email@email.com" autocomplete="off" required>
+                <p>Password</p>
+                <input type="password" name="password" pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[?!@#$%^&*]).{8,}" placeholder="Password" autocomplete="off" required>
+                <p>Password should be at leas 8 characters, one upercase, one lowercase and one speacila character</p>
+                <div class="buttons">
+                    <button type="submit">Add</button>
+                    <a href="/" class="cancel">Cancel</a> 
+                </div>
+            </form>
+        </div>
+    </main>
+{% elif type == "edit" %}
+    <main class="main" style="margin-bottom: 4.5rem">
+        <div class="container">
+            <form action="/editcard" method="post" class="add">
+                <p>domain</p>
+                <input value="{{password.domain}}" type="text" name="domain" placeholder="domain" autocomplete="off" required>
+                <p>Email</p>
+                <input value="{{password.email}}" type="email" name="email" placeholder="email@email.com" autocomplete="off" required>
+                <p>Password</p>
+                <input value="{{password.password}}" type="password" name="password" pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[?!@#$%^&*]).{8,}" placeholder="Password" autocomplete="off" required>
+                <p>Password should be at leas 8 characters, one upercase, one lowercase and one speacila character</p>
+                <input type="hidden" name="id" value="{{password.id}}">
+                <div class="buttons">
+                    <button type="submit">Edit</button>
+                    <a href="/" class="cancel">Cancel</a> 
+                </div>
+                <div class="buttons">
+                    <button type="button" class="button" onclick="navigator.clipboard.writeText('{{password.email}}:{{password.password}}')">Copy</button>
+                    <a href="/deletcard?id={{password.id}}" class="delete">Delete</a>
+                </div>
+            </form>
+            
+        </div>
+    </main>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,15 @@
+First way:
+    Purple when energy, danceability and loudness is high.
+    Green when energy and loudness is low but the speechiness is high.
+    Pink when energy and speechiness is high and loudness is low.
+    Orange when energy and loudness is high and speechiness in low.
+    Yellow when energy is high and speechiness is medium and danceability, loudness is low.
+    Blue when speechiness is high and energy, danceability and loudness is low.
+
+Second way:
+    Purple when energy, danceability and speechness is high.
+    Green when speechiness is high energy, danceability and loudness is low.
+    Pink when energy, speechiness, loudness and danceability is high.
+    Orange when energy, speechiness and loudness is high.
+    Yellow when energy and danceability is high and loudness is low.
+    Blue when speechiness and energy is high but danceability and loudness is low.

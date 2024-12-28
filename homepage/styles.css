@@ -1,0 +1,257 @@
+/* this idea i took it from yt portfilo video*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #11212d;
+    color: #ccd0cf;
+    overflow-y: scroll;
+}
+
+.card {
+    width: 18rem;
+    background-color: #253745;
+    padding: 2px;
+}
+
+.card-body {
+    background-color: #11212d;
+    border-radius: 0.375rem;
+}
+
+header {
+    position: fixed;
+    background-color: #06141b;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    color: rgba(204, 202, 207, 0.3);
+    backdrop-filter: blur(10px);
+    text-decoration: bold;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+
+div.row {
+    justify-content: center;
+    align-items: center;
+}
+
+svg {
+    margin-right: 4px;
+}
+
+div.contact {
+    margin: 0 auto;
+    margin-top: -50px;
+    text-align: center;
+    width: 60vw;
+}
+
+.contact h1 {
+    font-size: 90px;
+    font-weight: 1000;
+    padding: 40px;
+}
+
+.contact h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #4a5c6a;
+}
+
+#contact {
+    font-size: 28px;
+    width: 100%;
+    color: #5b88ab;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.content{
+    max-width: 500px;
+}
+
+.content h1 {
+    font-size: 56px;
+    font-weight: 700;
+}
+
+.content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #5b88ab;
+}
+
+.content p,
+.contact p {
+    margin: 8px 0 20px;
+}
+
+img {
+    width: 50vh;
+}
+
+.btn.btn-primary {
+    background-color: #5b88ab;
+    width: 120px;
+    height: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #11212d;
+    border-color: #5b88ab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn.btn-primary:active {
+    border-color: #5b88ab;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 700;
+    text-decoration: none;
+    color: #ccd0cf;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #ccd0cf;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 35px;
+}
+
+/* this is from mr. duck to avoid repet codes in each page*/
+nav a:hover,
+a.active,
+.nav.flex-novbar a{
+    color: #5b88ab;
+    transform: scale(1.1);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+
+
+.nav.flex-column a {
+    width: 90vw;
+    padding: 20px;
+    border-radius: 0;
+    border-color: rgba(204, 202, 207, 0.3);
+    background-color: #06141b;
+    text-decoration: none;
+    color: #ccd0cf;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#mobile-novbar {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+}
+
+#button {
+    display: none;
+    background-color: #06141b;
+    border-color: rgba(204, 202, 207, 0.3);
+}
+
+/* this is also from mr. duck*/
+@media (max-width: 768px) {
+    header {
+        padding: 20px 5%;
+    }
+
+    #button {
+        display: block;
+    }
+
+    main {
+        margin-top: 25%;
+        flex-direction: column;
+        padding: 0 5%;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        max-width: 100%;
+        text-align: center;
+        margin: auto;
+        order: 2;
+    }
+
+    .content a {
+        margin: auto;
+    }
+
+    .content img {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    img {
+        order: 1;
+        width: 90vw;
+    }
+
+    div.contact {
+        width: 90%;
+    }
+
+    .contact h1 {
+        font-size: 50px;
+        font-weight: 700;
+        margin-top: 20%;
+        padding: 0;
+    }
+
+    .card {
+        margin-top: 10%;
+        width: 90vw;
+    }
+
+    .card-body {
+        order: 2;
+    }
+
+    #contact {
+        font-size: 20px;
+    }
+
+    button {
+        display: block;
+    }
+}

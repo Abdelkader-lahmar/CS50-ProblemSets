@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--Simple setup-->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!--this methode got it from copilot-->
+        <link rel="icon" href="{{ url_for('static', filename='favicon.png') }}" type="image/png">
+        <title>CS:Pass</title>
+    </head>
+    <body>
+        <!--Add header to the page-->
+        <header class="header">
+            <a href="/" class="icon">CS:Pass</a>
+        </header>
+        <!--The main section where will be userd for add content from other pages-->
+        {% block main %}{% endblock %}
+        <!--Add footer to navigate between pages-->
+        <!--Icons are taken from SVG Repo-->
+        {% if show_footer %}
+            <footer class="footer">
+                <a href="/" class="btn">
+                    <svg width="256px" height="256px" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.50091 10.9673V15.6123C5.45843 17.4397 6.90451 18.9561 8.73191 19.0003H16.2699C18.0973 18.9561 19.5434 17.4397 19.5009 15.6123V10.9673C19.503 9.59674 18.8636 8.30422 17.7729 7.47427L14.7129 5.61927C13.3535 4.79358 11.6474 4.79358 10.2879 5.61927L7.22891 7.47427C6.13826 8.30422 5.49884 9.59674 5.50091 10.9673Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14.6549 15.1832C14.15 15.8667 13.3507 16.27 12.5009 16.27C11.6512 16.27 10.8518 15.8667 10.3469 15.1832" stroke="#000000" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+                </a>
+                <a href="/card?type=add" class="btn">
+                    <div class="container">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="Edit / Add_Plus"> <path id="Vector" d="M6 12H12M12 12H18M12 12V18M12 12V6" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g> </g></svg>
+                    </div>
+                </a>
+                <a href="/account" class="btn">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </a>
+            </footer>
+        {% endif %}
+    </body>
+</html>

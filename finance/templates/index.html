@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}Portfolio{% endblock %}
+
+{%block main%}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-end">Buy/Sell</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for symbol in user_data %}
+                <tr>
+                    <td class="text-start">{{symbol["symbol"]}}</td>
+                    <td class="text-end">
+                        <form style="display: inline" action='/buy'>
+                            <button class="btn btn-primary" type="submit" name="symbol" value={{symbol.symbol}}>Buy</button>
+                        </form>
+                        <form style="display: inline" action="/sell">
+                            <button class="btn btn-primary" type="submit" name="symbol" value={{symbol.symbol}}>SELL</button>
+                        </form>
+                    </td>
+                    <td class="text-end">{{symbol["shares"]}}</td>
+                    <td class="text-end">{{symbols_price[symbol["symbol"]] | usd}}</td>
+                    <td class="text-end">{{(symbol["shares"] * symbols_price[symbol["symbol"]]) | usd}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                <td class="border-0 text-end">{{user_info["cash"] | usd}}</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+                <td class="border-0 w-bold text-end">{{symbols_price["total"] | usd}}</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}

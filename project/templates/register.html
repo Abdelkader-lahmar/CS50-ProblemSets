@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <main class="main register">
+        <div class="container top">
+            <h1>Register</h1>
+            <p>Access your password securly</p>
+        </div>
+        <div class="container">
+            <form action="/register" method="post" class="register">
+                <p>Name</p>
+                <input type="text" name="user_name" placeholder="Name" autocomplete="off" required>
+                <p>Email</p>
+                <input type="email" name="email" placeholder="email@email.com" autocomplete="off" required>
+                <p>Password</p>
+                <input type="password" name="password" pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[?!@#$%^&*]).{8,}" placeholder="Password" autocomplete="off" required>
+                <p>Password should be at leas 8 characters, one upercase, one lowercase and one speacila character</p>
+                <p>Confirm password</p>
+                <input type="password" name="confirm" pattern="(?=.*[A-Z])(?=.*[0-9])(?=.*[?!@#$%^&*]).{8,}" placeholder="Password" autocomplete="off" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        <div class="container login">
+            <p>Alredy have an account?</p>
+            <a href="/login">Login</a>
+        </div>
+    </main>
+{% endblock %}

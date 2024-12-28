@@ -1,0 +1,275 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/* Variables */
+
+:root {
+    /* Colors */
+    --DARK: black;
+    --LIGHT: white;
+    --MAIN-COLOR: #95D2FF;
+}
+
+
+/* CSS Rest*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Nunito", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0rem;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: var(--MAIN-COLOR);
+}
+
+/* Start */
+
+.main {
+    background: var(--LIGHT);
+    color: var(--DARK);
+    margin-top: 3.75rem;
+    padding: 0.5rem;
+    width: 100%;
+    position: relative;
+}
+
+.main .layout {
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.main .container button {
+    margin-top: 2rem;
+    background-color: var(--MAIN-COLOR);
+    border: none;
+    transition: .5s;
+}
+
+.main .container button:hover,
+.main .container input:hover {
+    transform: scale(1.05);
+}
+
+.container .login a {
+    display: block;
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--MAIN-COLOR);
+}
+
+.main .container input {
+    padding: 0.3rem;
+    width: 100%;
+    height: 3rem;
+    border-radius: 0.5rem;
+    transition: .5s;
+}
+
+.main .container input {
+    border: 1px solid #7070709f;
+    outline-color: #95D2FF;
+}
+
+.main h1 {
+    font-size: 4rem;
+    font-weight: 900;
+}
+
+.main :is(.login, .register, .add, .account) p {
+    color: #333;
+    font-weight: 700;
+    margin: 1rem 0 0.3rem 0;
+}
+
+.main .container {
+    margin-top: 1rem;
+    display: block;
+    text-align: center;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3.75rem;
+    background-color: var(--LIGHT);
+    padding: 0.5rem;
+    z-index: 1;
+}
+
+.header a:any-link, .footer a:any-link {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.footer {
+    background-color: #EDEDED;
+    margin: 1rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 3.5rem;
+    width: calc(100% - 2rem);
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    border-radius: 1rem;
+}
+
+.footer .btn{
+    display: grid;
+    columns: 100%;
+    place-content: center;
+    transition: .3s;
+}
+
+.footer svg {
+    width: 2rem;
+    height: auto;
+}
+
+.footer .btn:hover{
+    transform: scale(1.15);
+}
+
+.footer .container {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: grid;
+    place-content: center;
+    background-color: var(--MAIN-COLOR);
+    border-radius: 50%;
+    transform: translateY(-1rem);
+}
+ 
+.main:is(.error, .login, .register, .add, .account) {
+    display: grid;
+    grid-template-columns: 100%;
+    place-content: center;
+}
+
+.main.error img {
+    width: clamp(300px, 90vw, 500px);
+    height: auto;
+}
+
+.pass{
+    height: 6rem;
+    width: clamp(21rem, 90vw, 26rem);
+    border: 2px solid rgba(148, 148, 148, 0.548);
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 5rem 1fr 3rem;
+    place-content: center;
+    padding: 0.5rem;
+    transition: 0.5s;
+}
+
+.main .card{
+    height: 6rem;
+    border: 2px solid rgba(148, 148, 148, 0.548);
+    width: 50%;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    place-content: center;
+    padding: 0.5rem;
+}
+
+.pass:hover {
+    transform: scale(1.05);
+}
+
+.pass img {
+    width: 5rem;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.add img {
+    width: 3rem;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.pass p {
+    font-size: 2rem;
+    font-weight: 900;
+    place-content: center;
+    text-align: center;
+}
+
+.pass .container {
+    width: 1rem;
+    height: 1rem;
+}
+
+.layout a {
+    place-content: center;
+    transition: .5s;
+}
+
+.layout a:hover {
+    transform: scale(1.2);
+}
+
+.main .container .buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main .container :is(button, a) {
+    width: 100%;
+    height: 3rem;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+}
+
+.main .container .buttons a{
+    place-content: center;
+    background-color: var(--MAIN-COLOR);
+    border: none;
+    color: var(--DARK);
+    transition: .5s;
+}
+
+.main .container .buttons a:hover{
+    transform: scale(1.05);
+}
+
+@media screen and (min-width: 481px) {
+    .main .container :is(input, button, .cancel, .buttons, .delete) {
+        width: 50%;
+    }
+}

@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Change password
+{% endblock %}
+
+{% block main %}
+    <h1>Change password</h1>
+    <form action="/accont" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" required autofocus class="form-control mx-auto w-auto" name="old" placeholder="Old password" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" required class="form-control mx-auto w-auto" name="new" placeholder="New password" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" required class="form-control mx-auto w-auto" name="confirmation" placeholder="New password (again)" type="text">
+        </div>
+        <button type="submit" class="btn btn-primary">Change password</button>
+    </form>
+    <h1>Add cash</h1>
+    <form action="/accont" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" required class="form-control mx-auto w-auto" name="add" min="1" placeholder="Add cash" type="number">
+        </div>
+        <button type="submit" class="btn btn-primary">ADD</button>
+    </form>
+{% endblock %}
